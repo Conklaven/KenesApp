@@ -21,7 +21,7 @@ const Login =({title}) =>{
         console.log('handleAction', id)
         if (id === 'Register'){
             try {
-                let response = await axios.post('http://localhost:5001/register',{
+                let response = await axios.post('https://kenes-tours.netlify.app/register',{
                     email,password
                 },{
                     withCredentials:true,
@@ -41,7 +41,7 @@ const Login =({title}) =>{
             }
         }else if (id === 'Login'){
             try {
-                let response = await axios.post('http://localhost:5001/login',{
+                let response = await axios.post('https://kenes-tours.netlify.app/login',{
                     email,password
                 },{withCredentials:true,
                     headers:{

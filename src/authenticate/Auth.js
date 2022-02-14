@@ -8,7 +8,7 @@ const [redirect, setRedirect] = useState(null);
 let navigate =useNavigate();
 useEffect(async () =>{
 try {
-    let response = await axios.get('http://localhost:5001/token', {
+    let response = await axios.get('https://kenes-tours.netlify.app/token', {
         withCredentials:true,
                     headers:{
                         'Access-Control-Allow-Origin': '*',

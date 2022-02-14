@@ -5,9 +5,13 @@ import Robots from './components/Restaurants'
 import 'tachyons'
 import Restaurants from './components/Restaurants';
 import Details from './components/Details';
-import Home from './components/Home'
+import Home from './components/Home';
+import Login from './components/Login';
 import AddRest from './components/AddRest';
-
+import Guides from './components/Guides';
+import {Auth} from './authenticate/Auth.js'
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,19 +32,17 @@ class App extends React.Component {
   render(){
 return(
   <>
-<div className="menu">
-          <ul>
-            {/* <li> <Link to="/restaurants">Restaurants</Link> </li>
-            <li> <Link to="/">Home</Link> </li>
-            <li> <Link to="/Details">Details</Link> </li> */}
-          </ul>
-      </div>
       <div className="App-intro">
+     <ToastContainer />
+
         <Routes>
-      <Route path="/restaurants" element={<Restaurants/>}/>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/Details" element={<Details/>}/>
-      <Route path="/AddRest" element={<AddRest/>}/>
+       <Route path="/login" element={<Login title={'Login'}/>}/>
+       <Route path="/Register" element={<Login title={'Register'}/>}/>
+      <Route path="/restaurants" element={<Auth><Restaurants title={'Restaurants'}/></Auth>}/>
+      <Route path="/" element={<Auth><Home title={'Home'}/></Auth>}/>
+      <Route path="/Details" element={<Auth><Details title={'Detials'}/></Auth>}/>
+      <Route path="/AddRest" element={<Auth><AddRest title={'Add Restaurant'}/></Auth>}/>
+      <Route path="/Guides" element={<Auth><Guides title={'Guides'}/></Auth>}/>
 
 
 

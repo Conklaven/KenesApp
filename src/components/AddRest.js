@@ -1,11 +1,19 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Routes,
+    Link
+  } from "react-router-dom";
 const AddRest = (props =>{
 
     const[restaurant_name, setrestaurant_name] = useState('')
     const[phone, setphone] = useState('')
     const[email, setemail] = useState('')
     const[city, setcity] = useState('')
+    const[rating, setrating] = useState('')
     const[cuisine, setcuisine] = useState('')
     const[about, setabout] = useState('')
     const[website, setwebsite] = useState('')
@@ -13,9 +21,6 @@ const AddRest = (props =>{
     const[kosher, setkosher] = useState('false')
     const[recommended_by, setrecommended_by] = useState('')
 
-    const backHome = () =>{
-        window.open('/', "_self");
-    }
 
     const handleSumbit= async (e) =>{
         e.preventDefault();
@@ -25,7 +30,7 @@ const AddRest = (props =>{
         // formData.append('email', email)
         // console.log("this is the form data", formData);
      try {
-         const data = await axios.post('http://localhost:5000/newrest', {
+         const data = await axios.post('https://enigmatic-river-02957.herokuapp.com/newrest', {
              restaurant_name,
              phone,
              email,
@@ -35,6 +40,7 @@ const AddRest = (props =>{
              website,
              social,
              kosher,
+             rating,
              recommended_by
 
              
@@ -49,7 +55,9 @@ const AddRest = (props =>{
     }
     return(
         <>
-        <button onClick={backHome}>Go Back</button>
+        <Link to="/restaurants">
+        <button>Go Back</button>
+        </Link>
         <div className="formContain">
         <form className="addrest" onSubmit={handleSumbit}>
             <h2>Add a New Restaurant</h2>
@@ -71,6 +79,17 @@ const AddRest = (props =>{
             <div>
             <label for="city">Address</label>
             <input className="addinput" type="text" onChange={(e)=> setcity(e.target.value)}></input>
+            </div>
+            <div>
+            <label for="rating">Rating</label>
+            <select className="addinput"  onChange={(e)=> setrating(e.target.value)} id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
             </div>
             <br/>
             <div>

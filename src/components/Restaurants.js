@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import Card from './Card';
 import SearchBox from './SearchBox';
 import {connect} from 'react-redux';
 import {handleArray, handleText, handleChecked} from '../actions/Actions'
 import RestArray from './RestArray';
+import { useNavigate } from 'react-router-dom';
+
 class Restaurants extends Component {
     constructor() {
         super();
@@ -15,13 +16,17 @@ class Restaurants extends Component {
     }
     componentDidMount = async (props) =>{
         try {
-            const response = await fetch('http://localhost:5000/api/images')
+            const response = await fetch('https://enigmatic-river-02957.herokuapp.com/api/images')
             const data = await response.json();
             // console.log(data)
             this.props.myHandleArray(data)
         } catch (e) {
             console.log(e)
         }
+        console.log("restaurant mounted")
+        this.props.myHandleText(this.state.txt)
+        this.props.myHandlechecked(this.state.kosher)
+
         // fetch('https://jsonplaceholder.typicode.com/users')
         // .then(response => response.json())
         // .then(data =>{
@@ -29,7 +34,10 @@ class Restaurants extends Component {
     // })
     }
     backHome =() =>{
-        window.open('/', "_self");
+        const navigate = useNavigate();
+        navigate(-1)
+        // navigate.goBack()
+        // window.open('/restaurants', "_self");
     }
     searchItem =(e) => {
         // console.log(e)
@@ -40,7 +48,7 @@ class Restaurants extends Component {
         // console.log(e)
         // this.props.myHandleCheck(e.target.value)
         console.log(e.target.checked)
-        if (e.target.checked == true){
+        if (e.target.checked === true){
             this.props.myHandlechecked('kosher')
         }else{
             this.props.myHandlechecked('')

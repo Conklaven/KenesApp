@@ -32,9 +32,14 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+#Mainlogo {
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .robotcontain {
@@ -48,12 +53,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(
-270deg
-,#880000 0,rgb(0, 0, 0));
+  background: linear-gradient(270deg, #880000 0, rgb(0, 0, 0));
 }
 
-.nav{
+.nav {
   text-align: center;
 }
 
@@ -62,28 +65,29 @@ body {
   font-style: normal;
   font-weight: normal;
   src: local('SEGA LOGO FONT'), url('./media/SEGA.woff') format('woff');
-  }
-  
-  h1 {
-    font-family: 'SEGA LOGO FONT';
-    font-weight: 200;
-    color: #0ccac4;
-  }
-
-  .Title{
-    text-align: center;
-    width: 1000px;
-  }
-
-  .f1 {
-    width: fit-content;
-    font-size: 3rem;
-    text-align: center;
-    margin: auto;
-    color: white;
-    display: inline;
-    float:left;
 }
+
+h1 {
+  font-family: 'SEGA LOGO FONT';
+  font-weight: 200;
+  color: #0ccac4;
+}
+
+.Title {
+  text-align: center;
+  width: 1000px;
+}
+
+.f1 {
+  width: fit-content;
+  font-size: 3rem;
+  text-align: center;
+  margin: auto;
+  color: white;
+  display: inline;
+  float: left;
+}
+
 #logo {
   display: inline;
   width: fit-content;
@@ -115,16 +119,18 @@ body {
 
 input#searchbox {
   font-size: 20px;
-  height: 40px;
+  height: 10px;
   margin: 10px;
 }
+
 .backBTN {
   margin: auto;
   margin-top: 10px;
   margin-right: 40px;
   border-radius: 10px;
 }
-.whiteText{
+
+.whiteText {
   color: white;
 }
 
@@ -133,61 +139,90 @@ input#searchbox {
   width: 70%;
   text-align: center;
 }
-#arrow{
+
+#arrow {
   display: none;
 }
+
 @media only screen and (max-width: 1000px) {
+  .kosherdiv {
+    margin-top: 10px;
+    /* float: right; */
+  }
+
+  .restrict {
+    margin-top: 50% !important;
+    width: 100% !important;
+  }
+
+  #Mainlogo {
+    height: auto !important;
+  }
+
   .detailscontainer {
 
     margin-top: 50% !important;
   }
- h2.f1 {
+
+  h2.f1 {
     display: none;
   }
-  input#searchbox{
-    width: 40%;
+
+  input#searchbox {
+    width: 55%;
+    margin-left: 40px;
   }
-  .robotcontain{
+
+  .robotcontain {
     margin-top: 175px;
   }
-  .Title{
+
+  .Title {
     display: block;
   }
-  .backBTN{
+
+  .backBTN {
     content: "";
-    position:absolute;
+    position: absolute;
     right: 0;
-    top:10px;
+    top: 10px;
   }
-  #arrow{
+
+  #arrow {
     display: block;
+    font-size: 20px;
   }
-  #return{
+
+  #return {
     display: none;
   }
+
   .arrow {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
+    font-size: 20px;
   }
-  
+
   .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
-  .search{
-    float:left;
+
+  .search {
+    float: left;
     margin-left: -50px;
   }
-  label{
+
+  label {
     font-size: 22px;
   }
-  
+
 }
 
-.addrest{
-  color:white;
+.addrest {
+  color: white;
 }
 
 .formContain {
@@ -204,7 +239,7 @@ input#searchbox {
   font-size: 20px;
 }
 
-.addinput{
+.addinput {
   /* display: inline-block; */
   float: right;
 }
@@ -218,6 +253,35 @@ input#searchbox {
 .detailscontainer {
   width: 80%;
   margin: auto;
-  margin-top: 5;
+  margin-top: 50px;
   text-align: center;
 }
+
+.restrict {
+  width: 50%;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  margin: auto;
+}
+
+.checked {
+  color: orange;
+}
+.rating {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.authcontainer {
+  color: white;
+  text-align: center;
+  /* border: white; */
+}
+.LoginTitle {
+  font-size:50px;
+}
+.inputs{
+  background-color: white;
+}
+

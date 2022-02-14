@@ -19,6 +19,10 @@ class RestArray extends Component {
             name:'',
         }
     }
+    componentDidMount(){
+      console.log("mounted")
+      // this.props.text = ""
+    }
     restDetails=(e) => {
       console.log(e)
       console.log(this.props.restaurant_name)

@@ -1,3 +1,10 @@
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Routes,
+    Link
+  } from "react-router-dom";
 const SearchBox = (props =>{
     return(
         <>
@@ -6,7 +13,18 @@ const SearchBox = (props =>{
                 <img id="logo" src="https://1kur9t3xffe11yy9in1cqsuu-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/cropped-Kenes-tours_Logo-WHITE-3-2048x803.png" height= "35px"/>
                     <div className="Title">
                         <h2 className="f1">Kenes Tours Database</h2>
-                        <button className="backBTN" onClick={props.backHome}><span id="return">Return Home</span> <span id="arrow"><i class="arrow left"></i></span></button>
+                        <Link to="/">
+                        <button className="backBTN" 
+                        // onClick={useNavigate(-1)}
+                        >
+                            <span id="return">Return Home
+                            </span> 
+                            <span id="arrow">
+                                Back
+                                {/* <i class="arrow left"></i> */}
+                            </span>
+                        </button>
+                        </Link>
                     </div>
             </div>
             <div className="search">

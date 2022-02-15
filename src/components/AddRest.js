@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {toast} from 'react-toastify'
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -46,10 +48,14 @@ const AddRest = (props =>{
              
          })
          let successmsg = document.getElementById('success')
+         toast.success("Restaurant added successfully")
          successmsg.innerHTML = "Restaurant added successfully"
          console.log(data.data)
      } catch (error) {
          console.log(error)
+         let failmsg = document.getElementById('fail')
+         toast.error("Restaurant not added")
+         failmsg.innerHTML = "Restaurant Not Added"
      }
 
     }

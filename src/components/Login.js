@@ -1,13 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios'
 import {toast} from 'react-toastify'
-import './login.css'
+import './login.css';
+import {AppContext} from '../App'
 
 const Login =({title}) =>{
+    const {setAccessToken} = useContext(AppContext);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [msg, setMsg] = useState('');
@@ -21,13 +24,13 @@ const Login =({title}) =>{
         console.log('handleAction', id)
         if (id === 'Register'){
             try {
-                let response = await axios.post('https://kenes-tours.netlify.app/register',{
+                let response = await axios.post('https://enigmatic-river-02957.herokuapp.com/register',{
                     email,password
                 },{
                     withCredentials:true,
                     headers:{
                         'Access-Control-Allow-Origin': '*',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     }
                 })
             console.log('Register response', response)
@@ -41,15 +44,17 @@ const Login =({title}) =>{
             }
         }else if (id === 'Login'){
             try {
-                let response = await axios.post('https://kenes-tours.netlify.app/login',{
+                let response = await axios.post('https://enigmatic-river-02957.herokuapp.com/login',{
                     email,password
-                },{withCredentials:true,
+                },{
+                    withCredentials:true,
                     headers:{
                         'Access-Control-Allow-Origin': '*',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     }
                 })
                 console.log('login response', response)
+                setAccessToken(response.data)
             navigate('/')
 
             } catch (error) {
@@ -61,15 +66,11 @@ const Login =({title}) =>{
     }
     return(
         <>
-        
         <div className="authcontainer">
-        <div id="main">
-                <img id="Mainlogo" src="https://1kur9t3xffe11yy9in1cqsuu-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/cropped-Kenes-tours_Logo-WHITE-3-2048x803.png" height= "200px"/>
+            <div>
+        <h2>{title} Form</h2>
         </div>
-        <div>
-        <h2 className="LoginTitle">{title}</h2>
-        </div>
-        <Box  component="form"
+        <Box component="form"
         sx={{m:1}}
         noValidate
         autoComplete ="off">

@@ -4,6 +4,13 @@ import {connect} from 'react-redux';
 import {handleArray, handleText, handleChecked} from '../actions/Actions'
 import RestArray from './RestArray';
 import { useNavigate } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Routes,
+    Link
+  } from "react-router-dom";
 
 class Restaurants extends Component {
     constructor() {
@@ -61,8 +68,13 @@ class Restaurants extends Component {
         return(
            
             <>
-        <SearchBox  searchItem={this.searchItem} checkBox={this.checkBox} backHome={this.backHome}/>
-        <RestArray/>
+                <SearchBox  searchItem={this.searchItem} checkBox={this.checkBox} backHome={this.backHome}/>
+                <RestArray/>
+                <div id="centerlink" >
+                    <div className='centerlink grow bg-white br3 pa3 ma2 dib bw2 shadow-5'>
+                        <Link className="f2" to="/AddRest">Add a Restaurant</Link>
+                    </div>
+                </div>
             </>
         )
     }

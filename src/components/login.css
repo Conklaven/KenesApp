@@ -1,3 +1,11 @@
 input[type="text"] {
     box-sizing: content-box !important;
   }
+  input[type="password"] {
+    box-sizing: content-box !important;
+  }
+
+  .access {
+    margin-top: 20px;
+    font-size: 20px;
+}

@@ -12,6 +12,8 @@ let navigate =useNavigate();
 useEffect(async () =>{
 try {
     let response = await axios.get('https://enigmatic-river-02957.herokuapp.com/tokens', {
+    // let response = await axios.get('http://localhost:5001/tokens', {
+
         withCredentials:true,
                     headers:{
                         'Access-Control-Allow-Origin': '*',

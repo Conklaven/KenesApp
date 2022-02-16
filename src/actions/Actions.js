@@ -5,9 +5,22 @@ export const handleArray = (data) => {
     }
   }
 
+  export const handleGuideArray = (data) => {
+    return {
+      type: 'GUIDEARRAY',
+      payload: data
+    }
+  }
+
   export const handleText = (data) =>{
     return{
       type:'TEXT',
+      payload: data
+    }
+  }
+  export const handleGuideText = (data) =>{
+    return{
+      type:'GUIDETEXT',
       payload: data
     }
   }

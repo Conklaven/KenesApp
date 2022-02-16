@@ -6,6 +6,8 @@ import Details from './components/Details';
 import Home from './components/Home';
 import Login from './components/Login.js';
 import AddRest from './components/AddRest';
+import GuideDetails from './components/GuideDetails';
+import AddGuide from './components/AddGuide';
 import Guides from './components/Guides';
 import {Auth} from './authenticate/Auth.js'
 import {ToastContainer} from 'react-toastify';
@@ -40,20 +42,25 @@ const App = () => {
               <Home title={'Home'}/>
             </Auth>
           }/>
-          <Route path="/" element={
-            <Auth>
-              <Home title={'Home'}/>
-            </Auth>
-          }/>
           <Route path="/Details" element={
             <Auth>
               <Details title={'Detials'}/>
             </Auth>
           }/>
+          <Route path="/GuideDetails" element={
+            <Auth>
+              <GuideDetails title={'GuideDetials'}/>
+            </Auth>
+          }/>
+          <Route path="/AddGuide" element={
+            <Auth>
+              <AddGuide title={'Add Guide'}/>
+            </Auth>
+          }/>
           <Route path="/AddRest" element={
-            // <Auth>
+            <Auth>
               <AddRest title={'Add Restaurant'}/>
-            // </Auth>
+             </Auth>
           }/>
           <Route path="/Guides" element={
             <Auth>

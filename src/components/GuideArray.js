@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Card from './Card';
+import GuideCard from './GuideCard';
 import {connect} from 'react-redux';
 import {handleSelected} from '../actions/Actions'
 import Details from './Details';
@@ -9,11 +9,11 @@ import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
-class RestArray extends Component {
+class GuideArray extends Component {
     constructor() {
         super();
         this.state = {
-            arr:[],
+            guidearr:[],
             txt:'',
             kosher: '',
             name:'',
@@ -30,30 +30,27 @@ class RestArray extends Component {
     render(props){
         // console.log(this.props.array)
         // console.log(this.props.txt)
-        console.log(this.props.SelectedName)
-
-        const kosherArr = this.props.array.filter(item => {
-          console.log(this.props.kosher)
-          return item.kosher.toLowerCase().includes(this.props.kosher);
-
-      })
-        // const {arr,txt} = this.props;
-        const filterArr = kosherArr.filter(item => {
-            // console.log(item)
-            return item.restaurant_name.toLowerCase().includes(this.props.txt.toLowerCase()) 
-            || item.city.toLowerCase().includes(this.props.txt.toLowerCase()) 
-            // || item.cuisine.toLowerCase().includes(this.props.txt.toLowerCase())
-            // || item.kosher.toLowerCase().includes(this.props.txt.toLowerCase()) 
-            // && item.kosher.toLowerCase().includes(this.props.txt);
-
+        const filtered = this.props.array.filter(item => {
+            console.log(item)
+            return item.first_name.toLowerCase().includes(this.props.txt.toLowerCase())
+            || item.last_name.toLowerCase().includes(this.props.txt.toLowerCase())
+            || item.city.toLowerCase().includes(this.props.txt.toLowerCase())
+            || item.languages.toLowerCase().includes(this.props.txt.toLowerCase())
+            || item.group_type.toLowerCase().includes(this.props.txt.toLowerCase());
         })
+        // const filtered = this.props.array.filter(item => {
+        //   console.log(this.props.txt)
+          // return item.first_name.toLowerCase().includes(this.props.txt.toLowerCase()) 
+          // || item.city.toLowerCase().includes(this.props.txt.toLowerCase()) 
+          
+      // })
         return(
            
             <>
         <div className="robotcontain">
                 {
-                    filterArr.map((item, i) =>{
-                      return <Card user={item} restDetails={this.restDetails}/>
+                    filtered.map((item, i) =>{
+                      return <GuideCard user={item} restDetails={this.restDetails}/>
                     })
                   }
             </div>
@@ -65,9 +62,8 @@ class RestArray extends Component {
 const mapStateToProps = (state) =>{
   console.log(state.selectedname)
     return {
-      array: state.array,
-    txt: state.txt,
-    kosher: state.kosher,
+      array: state.guidearray,
+    txt: state.guidetxt,
     SelectedName: state.selectedname
   }
   }
@@ -78,4 +74,4 @@ const mapStateToProps = (state) =>{
     // myHandleDown: (e) => dispatch(handleDown(e))
   }
   }
-  export default connect(mapStateToProps, mapDispatchToProps)(RestArray);
+  export default connect(mapStateToProps, mapDispatchToProps)(GuideArray);

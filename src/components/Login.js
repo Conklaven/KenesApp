@@ -25,7 +25,9 @@ const Login =({title}) =>{
         if (id === 'Register'){
             try {
                 let response = await axios.post('https://enigmatic-river-02957.herokuapp.com/register',{
-                    email,password
+                // let response = await axios.post('http://localhost:5001/register',{
+                   
+                email,password
                 },{
                     withCredentials:true,
                     headers:{
@@ -45,7 +47,9 @@ const Login =({title}) =>{
         }else if (id === 'Login'){
             try {
                 let response = await axios.post('https://enigmatic-river-02957.herokuapp.com/login',{
-                    email,password
+                    // let response = await axios.post('http://localhost:5001/login',{
+                    
+                email,password
                 },{
                     withCredentials:true,
                     headers:{
@@ -67,6 +71,9 @@ const Login =({title}) =>{
     return(
         <>
         <div className="authcontainer">
+        <div id="main">
+                <img id="Mainlogo" src="https://1kur9t3xffe11yy9in1cqsuu-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/cropped-Kenes-tours_Logo-WHITE-3-2048x803.png" height= "200px"/>
+        </div>
             <div>
         <h2>{title} Form</h2>
         </div>
@@ -84,6 +91,7 @@ const Login =({title}) =>{
             />
             <TextField
             className="inputs"
+            type="password"
             sx={{m:1}}
             id='password'
             label='Enter password'
@@ -95,7 +103,7 @@ const Login =({title}) =>{
         onClick={()=>handleAction(title)}
         >{title}</Button>
         <div>{msg}</div>
-        <div>{title==="Register" ? <Link to ='/login'>Login</Link>:<Link to ='/register'>Register</Link>}
+        <div className="access"> Please contact Kenes Tours admin for access
         </div>
         </div>
         </>

@@ -40,6 +40,10 @@ class Home extends Component {
              <div id="links" className='tc grow bg-white br3 pa3 ma2 dib bw2 shadow-5'>
              <Link className="f2" to="/AddRest">Add a New Restaurant</Link>
              </div>
+             <br/>
+             <div id="links" className='tc grow bg-white br3 pa3 ma2 dib bw2 shadow-5'>
+             <Link className="f2" to="/AddGuide">Add a New Guide</Link>
+             </div>
         </div>
         )
     }

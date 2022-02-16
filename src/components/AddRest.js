@@ -61,15 +61,17 @@ const AddRest = (props =>{
     }
     return(
         <>
-        <Link to="/restaurants">
-        <button>Go Back</button>
+        <div className="backcontain">
+        <Link to="/">
+        <button className="addpage backBTN">Go Back</button>
         </Link>
+        </div>
         <div className="formContain">
         <form className="addrest" onSubmit={handleSumbit}>
             <h2>Add a New Restaurant</h2>
             <div>
             <label for="restaurant_name">Name</label>
-            <input className="addinput" onChange={(e)=> setrestaurant_name(e.target.value)} type="text" ></input>
+            <input className="addinput" onChange={(e)=> setrestaurant_name(e.target.value)} type="text" required></input>
             </div>
         <br/>
         <div>
@@ -86,6 +88,8 @@ const AddRest = (props =>{
             <label for="city">Address</label>
             <input className="addinput" type="text" onChange={(e)=> setcity(e.target.value)}></input>
             </div>
+            <br/>
+
             <div>
             <label for="rating">Rating</label>
             <select className="addinput"  onChange={(e)=> setrating(e.target.value)} id="rating">

@@ -285,3 +285,19 @@ input#searchbox {
   background-color: white;
 }
 
+#centerlink {
+  text-align: center;
+  margin: auto;
+  width: fit-content;
+}
+
+#success {
+  font-size: 40px;
+  color: green;
+  margin-top: 20px;
+}
+
+.backcontain {
+  margin: auto;
+  text-align: center;
+}

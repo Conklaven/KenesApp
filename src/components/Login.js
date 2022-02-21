@@ -69,44 +69,48 @@ const Login =({title}) =>{
         }
     }
     return(
-        <>
+    <>
         <div className="authcontainer">
-        <div id="main">
+            <div id="main">
                 <img id="Mainlogo" src="https://1kur9t3xffe11yy9in1cqsuu-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/cropped-Kenes-tours_Logo-WHITE-3-2048x803.png" height= "200px"/>
-        </div>
+            </div>
             <div>
-        <h2>{title} Form</h2>
+                <h2>{title} Form</h2>
+            </div>
+            <Box component="form"
+                sx={{m:1}}
+                noValidate
+                autoComplete ="off">
+                    <TextField
+                    className="inputs"
+                    sx={{m:1}}
+                    id='email'
+                    label='Enter Email'
+                    variant='outlined'
+                    onChange={(e)=>setEmail(e.target.value)}
+                    />
+                    <TextField
+                    className="inputs"
+                    type="password"
+                    sx={{m:1}}
+                    id='password'
+                    label='Enter password'
+                    variant='outlined'
+                    onChange={(e)=>setPassword(e.target.value)}/>
+            </Box>
+                <Button variant="contained"
+                    onClick={()=>handleAction(title)}
+                    >{title}
+                </Button>
+                <div>
+                    {msg}
+                </div>
+                <div className="access"> 
+                    Please contact Kenes Tours admin for access
+                </div>
+                <div className="secret">{title==="Register" ? <Link to ='/login'>Login</Link>:<Link to ='/register'>Register</Link>}</div>
         </div>
-        <Box component="form"
-        sx={{m:1}}
-        noValidate
-        autoComplete ="off">
-            <TextField
-            className="inputs"
-            sx={{m:1}}
-            id='email'
-            label='Enter Email'
-            variant='outlined'
-            onChange={(e)=>setEmail(e.target.value)}
-            />
-            <TextField
-            className="inputs"
-            type="password"
-            sx={{m:1}}
-            id='password'
-            label='Enter password'
-            variant='outlined'
-            onChange={(e)=>setPassword(e.target.value)}/>
-        </Box>
-        <Button variant="contained"
-        // onClick={title=='Register'? handleAction()}
-        onClick={()=>handleAction(title)}
-        >{title}</Button>
-        <div>{msg}</div>
-        <div className="access"> Please contact Kenes Tours admin for access
-        </div>
-        </div>
-        </>
+    </>
     )
 }
 

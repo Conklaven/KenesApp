@@ -128,6 +128,8 @@ input#searchbox {
   margin-top: 10px;
   margin-right: 40px;
   border-radius: 10px;
+  float: left;
+  margin-left: 20px;
 }
 
 .whiteText {

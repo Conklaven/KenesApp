@@ -97,7 +97,7 @@ const AddGuide = (props =>{
             <br/>
             <div>
             <label for="bio">Bio</label>
-            <input className="addinput" type="textarea" onChange={(e)=> setbio(e.target.value)}></input>
+            <textarea className="addinput" type="textarea" onChange={(e)=> setbio(e.target.value)}></textarea>
             </div>
             <br/> 
             <div>

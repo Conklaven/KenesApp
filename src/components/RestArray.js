@@ -42,7 +42,7 @@ class RestArray extends Component {
             // console.log(item)
             return item.restaurant_name.toLowerCase().includes(this.props.txt.toLowerCase()) 
             || item.city.toLowerCase().includes(this.props.txt.toLowerCase()) 
-            // || item.cuisine.toLowerCase().includes(this.props.txt.toLowerCase())
+            || item.cuisine.toLowerCase().includes(this.props.txt.toLowerCase())
             // || item.kosher.toLowerCase().includes(this.props.txt.toLowerCase()) 
             // && item.kosher.toLowerCase().includes(this.props.txt);
 

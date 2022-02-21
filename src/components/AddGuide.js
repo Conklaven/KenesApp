@@ -64,7 +64,7 @@ const AddGuide = (props =>{
         </div>
         <div className="formContain">
         <form className="addrest" onSubmit={handleSumbit}>
-            <h2>Add a New Guide</h2>
+            <h2 className="addguideTitle">Add a New Guide</h2>
             <div>
             <label for="first_name">First Name</label>
             <input className="addinput" onChange={(e)=> setfirst_name(e.target.value)} type="text" required></input>
@@ -95,9 +95,9 @@ const AddGuide = (props =>{
             <input className="addinput" type="text" onChange={(e)=> setlanguages(e.target.value)}></input>
             </div>
             <br/>
-            <div>
+            <div className="bio">
             <label for="bio">Bio</label>
-            <textarea className="addinput" type="textarea" onChange={(e)=> setbio(e.target.value)}></textarea>
+            <textarea className="bioinput addinput" type="textarea" onChange={(e)=> setbio(e.target.value)}></textarea>
             </div>
             <br/> 
             <div>

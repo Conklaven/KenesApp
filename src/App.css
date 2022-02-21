@@ -147,6 +147,15 @@ input#searchbox {
 }
 
 @media only screen and (max-width: 1000px) {
+  h2.addguideTitle {
+    width: 60%;
+}
+  .addinput{
+    width: 40%;
+  }
+  .formContain{
+    width: 80% !important;
+  }
   .kosherdiv {
     margin-top: 10px;
     /* float: right; */
@@ -302,4 +311,12 @@ input#searchbox {
 .backcontain {
   margin: auto;
   text-align: center;
+}
+
+.bio{
+  margin-bottom: 20px;
+}
+
+.bioinput {
+  width: 250px;
 }

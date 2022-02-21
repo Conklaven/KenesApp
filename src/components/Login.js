@@ -108,7 +108,7 @@ const Login =({title}) =>{
                 <div className="access"> 
                     Please contact Kenes Tours admin for access
                 </div>
-                <div className="secret">{title==="Register" ? <Link to ='/login'>Login</Link>:<Link to ='/register'>Register</Link>}</div>
+                {/* <div className="secret">{title==="Register" ? <Link to ='/login'>Login</Link>:<Link to ='/register'>Register</Link>}</div> */}
         </div>
     </>
     )
